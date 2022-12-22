@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+---
+
+logging:
+  level:
+    root: debug
+
+---
+spring:
+
+  kafka:
+    bootstrap-servers:
+      - localhost:19092
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/twitterdashboard?serverTimezone=UTC&characterEncoding=UTF-8
+    username: ENC(6xIdLEN511AW2zQYoJNyPA==)
+    password: ENC(27DU1jFyyYKyDIktI4hh2uVgrI4uLUmc)
+  batch:
+    jdbc:
+      initialize-schema: ALWAYS
+    job:
+      names: ${job.name:NONE}
